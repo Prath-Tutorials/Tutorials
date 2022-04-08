@@ -13,9 +13,9 @@ function hangleClick(){
 */
 
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
-    document.querySelectorAll("button")[i].addEventListener("click", function(e){
-        console.log(e.target.innerHTML);
-        keyExecute(e.target.innerHTML);
+    document.querySelectorAll("button")[i].addEventListener("click", function(){
+        console.log(this.innerHTML);
+        keyExecute(this.innerHTML);
         });
 }
 
