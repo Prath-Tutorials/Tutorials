@@ -16,13 +16,15 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
         console.log(this.innerHTML);
         keyExecute(this.innerHTML);
+        buttonAnimation(this.innerHTML);
         });
 }
 
 
 document.addEventListener("keypress", function(e){
 console.log(e.key);
-keyExecute(e.key)
+keyExecute(e.key);
+buttonAnimation(e.key);
 });
 
 
@@ -73,5 +75,22 @@ function keyExecute(key){
 
         default: console.log(buttonInnerHTML);
     }
+
+}
+
+
+function buttonAnimation(key){
+    console.log(key);
+var activeButton = document.querySelector("." + key);
+console.log(activeButton);
+activeButton.classList.add("pressed" );
+
+
+
+
+
+setTimeout(function(){
+    activeButton.classList.remove("pressed" );
+},500);
 
 }
