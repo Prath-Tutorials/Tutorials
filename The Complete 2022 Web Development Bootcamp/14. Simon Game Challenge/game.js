@@ -9,6 +9,7 @@ var soundWrong = new Audio("sounds/wrong.mp3");
 var userChosenColour = "";
 let userClickedPattern  = [];
 
+var level = 0;
 
 
 
@@ -40,17 +41,26 @@ function nextSequence(){
     gamePattern.push(randomColor);
     console.log(gamePattern);
 
+    level++;
+    $('h1')[0].innerText = "Level " + level;
+    
+    console.log(level);
+
     //return randomColor;
     
 }
 
 
-
-
 document.addEventListener("keydown", keyDownTextField, false);
 
 function keyDownTextField(e) {
-  var keyCode = e.keyCode;
+  var keyCode = e.key;
+  console.log(keyCode);
+  if ($('h1')[0].innerText == "Press A Key to Start") {
+      $('h1')[0].innerText = "Level 0";
+      nextSequence();
+    }
+  
 
 }
 
