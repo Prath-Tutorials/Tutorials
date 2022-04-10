@@ -12,21 +12,6 @@ let userClickedPattern  = [];
 
 
 
-
-
-
-
-function nextSequence(){
-    randomNumber = Math.floor(Math.random()*4); // generate a new random number between 0 and 3
-    console.log(randomNumber);
-    return randomNumber;
-    
-}
-
-
-randomChosenColour = buttonColours[nextSequence()];
-
-
 function playColorSound(whatColor){
     switch(whatColor) {
         case "red":     soundRed.play();      break;
@@ -42,17 +27,22 @@ function playColorSound(whatColor){
 
 
 
+function nextSequence(){
+    randomNumber = Math.floor(Math.random()*4); // generate a new random number between 0 and 3
+    console.log(randomNumber);
 
-gamePattern.push(randomChosenColour);
+    randomColor = buttonColours[randomNumber];
+    console.log(randomColor);
 
-console.log(randomChosenColour);
+    playColorSound(randomColor);
+    $("#"+randomColor).fadeOut(100).fadeIn(100);
+    
+    gamePattern.push(randomColor);
+    console.log(gamePattern);
 
-console.log(gamePattern);
-
-$("#"+randomChosenColour).fadeOut(300).fadeIn(300);
-
-
-
+    //return randomColor;
+    
+}
 
 
 
@@ -66,10 +56,19 @@ function keyDownTextField(e) {
 
 
 $('[type="button"]').click(function(){
-    userChosenColour = this.id;
+    var myID = this.id;
+
+    userChosenColour = myID;
     console.log(userChosenColour);
-    userClickedPattern.push(this.id);
+    userClickedPattern.push(myID);
     console.log(userClickedPattern);
-    playColorSound(this.id);
-  
+    playColorSound(myID);
+
+
+    $("#"+myID).addClass('pressed');
+
+    setTimeout(function() {
+        $("#"+myID).removeClass('pressed');
+    }, 100);
+
   });
