@@ -10,10 +10,12 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-    console.log(req.body); // Logs the value that get returned
-    console.log(req.body.num1); // Logs the value num1 that get returned
-    console.log(req.body.num2); // Logs the value num2 that get returned
-    res.send("Thanks for posting that");
+    var num1 = Number(req.body.num1);
+    var num2 = Number(req.body.num2);
+
+    var result = num1 + num2;
+
+    res.send("Thanks result of the calculation is: " + result);
 });
 
 app.listen(3000, function(){
