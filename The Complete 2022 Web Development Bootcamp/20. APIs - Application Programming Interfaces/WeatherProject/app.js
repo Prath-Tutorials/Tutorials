@@ -1,16 +1,18 @@
 const express = require("express");
 const https = require("https"); // A native Node.ja module
-
-
+const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.urlencoded({extended: true})); // Necessart code need to parse the body of the data
 
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", function(req, res){
-    console.log("Post request received");
+    
+    console.log(req.body.cityName);
+    
 });
 
 
