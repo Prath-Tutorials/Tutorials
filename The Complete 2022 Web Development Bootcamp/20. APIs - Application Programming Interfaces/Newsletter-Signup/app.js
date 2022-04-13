@@ -10,3 +10,7 @@ app.listen(3000, function(){
 });
 
 
+
+app.get("/", function(req, res){
+    res.sendFile(__dirname + "/signup.html");
+});
