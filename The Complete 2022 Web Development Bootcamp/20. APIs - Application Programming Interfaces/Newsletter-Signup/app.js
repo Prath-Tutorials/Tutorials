@@ -33,7 +33,7 @@ app.post("/", function(req, res){
                 status: "subscribed",
                 merge_fields: {
                     FNAME: firstName,
-                    LANME: lastName
+                    LNAME: lastName
                 }
 
             }
