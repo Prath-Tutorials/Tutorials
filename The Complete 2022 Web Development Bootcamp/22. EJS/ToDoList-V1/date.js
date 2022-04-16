@@ -1,11 +1,7 @@
 
 
-//module.exports = getDate; //there is no bracket after getDate since we don't want to call it when exporting
-module.exports.getDate = getDate; //there is no bracket after getDate since we don't want to call it when exporting
 
-
-function getDate(){
-
+module.exports.getDate = function(){  // Converted into a function expression
 
     let today = new Date();
     let options = {
@@ -14,22 +10,16 @@ function getDate(){
         month: "long"
     }
 
-    let day = today.toLocaleDateString("en-US", options);
-
-    return day;
+    return day = today.toLocaleDateString("en-US", options);
 }
 
-module.exports.getDay = getDay; //there is no bracket after getDate since we don't want to call it when exporting
 
-function getDay(){
-
+module.exports.getDay = function (){  // Converted into a function expression
 
     let today = new Date();
     let options = {
         weekday: "long",
     }
 
-    let day = today.toLocaleDateString("en-US", options);
-
-    return day;
+    return day = today.toLocaleDateString("en-US", options);
 }
