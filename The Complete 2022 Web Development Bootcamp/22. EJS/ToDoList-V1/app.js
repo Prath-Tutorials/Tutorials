@@ -52,6 +52,11 @@ app.get("/work", function(reg, res){
 })
 
 
+app.get("/about", function(reg, res){
+    res.render("about")
+})
+
+
 
 
 
