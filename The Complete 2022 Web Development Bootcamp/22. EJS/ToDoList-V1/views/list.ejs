@@ -6,27 +6,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
+  <div class="box" id="heading">
+    <h1 style="color:rgb(255, 255, 255)"><%=kindOfDay%>!</h1>
 
+  </div>
 
-  <h1 style="color:rgb(73, 226, 43)"><%=kindOfDay%>!</h1>
-
-  <ul>
-
-
-
-    <% for(var i = 0; i < newListItems.length; i++ ){ %>
-        <li> <%=newListItems[i]%> </li>
-    <% }%>
-  </ul>
-
-  <form action="/" method="POST">
-    <input type="text" name="newItem">
-    <button type="submit" name="button">Add</button>
+  <div class="box">
+    
+      <% for(var i = 0; i < newListItems.length; i++ ){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p> <%=newListItems[i]%> </p>
+        </div>
+      
+      <% } %>
+    
+  <form action="/" method="POST" class="item">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="button" >+</button>
   </form>
+
+  </div>
+
+
+
+
 </body>
 
 </html>
