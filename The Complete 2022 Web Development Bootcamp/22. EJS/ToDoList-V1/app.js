@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
 
-    let day = date(); // this is calling the function in date.js
+    let day = date.getDate(); // this is calling the function in date.js [date.getDate() or date.getDay()]
     res.render("list", { 
         listTitle: day,
         newListItems: newItems
