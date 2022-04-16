@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+var newItems = ["Buy Food", "Cook Food", "Eat More"];
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,13 +21,16 @@ app.get("/", function (req, res) {
     var day = today.toLocaleDateString("en-US", options);
 
     res.render("list", { 
-        kindOfDay: day 
+        kindOfDay: day,
+        newListItems: newItems
     });
 });
 
 app.post("/", function(req, res){
-    req.body.newItem
-    console.log(req.body.newItem);
+    var newItem = req.body.newItem
+    newItems.push(newItem); 
+    console.log(newItem);
+    res.redirect("/");
 });
 
 
