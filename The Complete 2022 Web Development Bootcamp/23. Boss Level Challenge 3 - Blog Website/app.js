@@ -19,9 +19,8 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res){
   res.render("home",{
-    listTitle: homeStartingContent,
-
-})
+    startingContent: homeStartingContent
+  })
 });
 
 
