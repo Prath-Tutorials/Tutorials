@@ -3,8 +3,8 @@
 
 exports.getDate = function(){  // Converted into a function expression
 
-    let today = new Date();
-    let options = {
+    const  today = new Date();
+    const options = {
         weekday: "long",
         day: "numeric",
         month: "long"
@@ -16,8 +16,8 @@ exports.getDate = function(){  // Converted into a function expression
 
 exports.getDay = function (){  // Converted into a function expression
 
-    let today = new Date();
-    let options = {
+    const today = new Date();
+    const options = {
         weekday: "long",
     }
 

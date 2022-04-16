@@ -4,8 +4,8 @@ const date = require(__dirname + "/date.js")
 
 const app = express();
 
-let newItems = ["Buy Food", "Cook Food", "Eat More"];
-let workItems = [];
+const newItems = ["Buy Food", "Cook Food", "Eat More"];
+const workItems = [];
 
 app.set('view engine', 'ejs');
 
@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
 
-    let day = date.getDate(); // this is calling the function in date.js [date.getDate() or date.getDay()]
+    const day = date.getDate(); // this is calling the function in date.js [date.getDate() or date.getDay()]
     res.render("list", { 
         listTitle: day,
         newListItems: newItems
@@ -25,7 +25,7 @@ app.get("/", function (req, res) {
 app.post("/", function(req, res){
 
 
-    let newItem = req.body.newItem
+    const newItem = req.body.newItem
     console.log(req.body.list)
     if(req.body.list === "Work"){
         workItems.push(newItem); 
