@@ -1,4 +1,4 @@
-//jshint esversion:6
+
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -17,7 +17,12 @@ app.use(express.static("public"));
 
 
 
+app.get("/", function(req, res){
+  res.render("home",{
+    listTitle: homeStartingContent,
 
+})
+});
 
 
 
