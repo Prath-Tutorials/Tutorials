@@ -4,20 +4,17 @@
 <p> <%= pageStartingContent %> </p>
 
 <% 
-
 function truncate(str, len){
     return str.substring(0,len);
 }
 
+for (var i = 0; i < pagePostsContent.length; i++){
+%>
 
-
-for (var i = 0; i < pagePostsContent.length; i++)
-
-
-{%>
 
     <h2><%= pagePostsContent[i].title; %>  </h2>
-    <p> <%= truncate(pagePostsContent[i].content, 100) %> ...</p>
+    <p> <%= truncate(pagePostsContent[i].content, 100) %> ... 
+        <a href="/post/<%= pagePostsContent[i].title; %>"  >Read More</a></p>
    
 <% } %>
 
