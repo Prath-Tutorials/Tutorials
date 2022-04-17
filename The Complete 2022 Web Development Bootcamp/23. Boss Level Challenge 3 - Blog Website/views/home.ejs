@@ -3,10 +3,21 @@
 <h1>Home</h1>
 <p> <%= pageStartingContent %> </p>
 
-<% for (var i = 0; i < pagePostsContent.length; i++){%>
+<% 
 
-    <h1> <%= pagePostsContent[i].title; %>   </h1>
-    <p>  <%= pagePostsContent[i].content; %> </p>
+function truncate(str, len){
+    return str.substring(0,len);
+}
+
+
+
+for (var i = 0; i < pagePostsContent.length; i++)
+
+
+{%>
+
+    <h2><%= pagePostsContent[i].title; %>  </h2>
+    <p> <%= truncate(pagePostsContent[i].content, 100) %> ...</p>
    
 <% } %>
 
