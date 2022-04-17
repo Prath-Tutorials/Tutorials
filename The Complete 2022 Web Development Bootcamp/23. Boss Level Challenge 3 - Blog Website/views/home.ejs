@@ -3,5 +3,13 @@
 <h1>Home</h1>
 <p> <%= pageStartingContent %> </p>
 
+<% for (var i = 0; i < pagePostsContent.length; i++){%>
+
+    <h2> <%= pagePostsContent[i].title; %>   </h2>
+    <p>  <%= pagePostsContent[i].content; %> </p>
+   
+<% } %>
+
+
 
 <%- include('partials/footer'); -%>
