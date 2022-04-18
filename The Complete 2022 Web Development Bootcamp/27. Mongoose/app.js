@@ -20,4 +20,20 @@ const fruit = new Fruit({
     review: "Really good"
 });
 
-fruit.save();
+//fruit.save();
+
+const personSchema = new mongoose.Schema(
+    {
+        name: String,
+        age: Number
+    }
+);
+
+const Person = mongoose.model("Person", fruitSchema);
+
+const person = new Person({
+    name: "John",
+    age: 37,
+});
+
+person.save();
