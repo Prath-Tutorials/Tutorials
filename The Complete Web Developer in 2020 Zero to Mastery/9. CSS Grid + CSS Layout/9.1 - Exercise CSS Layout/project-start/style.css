@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif ;
 }
 .zone {
 
@@ -19,13 +20,24 @@
     box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
+.box:hover {
+    -webkit-transform: rotate(2deg);
+}
+
+
 /* NAV */
+.sticky{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
 .main-nav{
     display: flex;
     list-style: none;
     font-size: 0.7em;
     margin: 0px;
     transition: all 1s;
+
 }
 
 @media only screen and (max-width: 600px){
@@ -55,6 +67,10 @@ a{
     align-items: center;
     justify-content: center;
     height: 50vh; /* vh = viewport height */
+}
+
+.cover{
+    width: 30rem;
 }
 
 
