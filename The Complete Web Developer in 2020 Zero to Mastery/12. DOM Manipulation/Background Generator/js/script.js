@@ -9,23 +9,14 @@ console.log(color1);
 console.log(color2);
 console.log(body);
 
+function setGradient(){
+    cssCode = "linear-gradient(to right, "+ color1.value + " , " + color2.value + ")"
+    body.style.background = cssCode;
+    css.textContent = cssCode;
+}
 
+color1.addEventListener("input", setGradient);
 
-color1.addEventListener("input", function(){
-    console.log(color1.value);
-    var bgCssC1 = "linear-gradient(to right, "+ color1.value + " , " + color2.value + ")";
-    body.style.background = bgCssC1;
-    css.innerHTML = bgCssC1;
-    
-})
-
-
-
-color2.addEventListener("input", function(){
-    console.log(color2.value);
-    var bgCssC2 = "linear-gradient(to right, "+ color1.value + " , " + color2.value + ")";
-    body.style.background = bgCssC2;
-    css.innerHTML = bgCssC2;
-})
+color2.addEventListener("input", setGradient);
 
 
