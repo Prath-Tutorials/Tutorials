@@ -8,7 +8,7 @@ class App extends Component {
 
     /*
         this.state = {
-          monster: [
+          monsters: [
             { id: "f9rwer", name: 'Linda' },
             { id: "Itr5e5", name: 'Frank' },
             { id: "8Or458", name: 'Jacky' }
@@ -17,13 +17,22 @@ class App extends Component {
     */
 
     this.state = {
-      monster: []
+      monsters: []
     };
   }
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((respond) => respond.json())
-      .then((users) => console.log(users))
+      .then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
+          },
+          () => {
+            console.log(this.state);
+          }
+        )
+      );
   }
 
 
@@ -31,8 +40,8 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.state.monster.map((monster) => {
-            return <h1 key={monster.id}> {monster.name} </h1> // key must to be added to the parent tag only
+          this.state.monsters.map((monsters) => {
+            return <h1 key={monsters.id}> {monsters.name} </h1> // key must to be added to the parent tag only
           })
         }
       </div>
