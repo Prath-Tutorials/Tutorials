@@ -7,7 +7,8 @@ class App extends Component {
     super(); // This calls the constructor method of Component
 
     this.state = {
-      name: 'Prathep'
+      name: 'Prathep',
+      company: 'Microsoft'
     }
   }
 
@@ -17,10 +18,11 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hi {this.state.name}
+            Hi this is {this.state.name}, I work at {this.state.company}
           </p>
           <button onClick={() => {
-            this.setState({name: 'Thurairatnam'})
+            this.setState({name: 'Thurairatnam'}) //this.setState is updating the state to a different object || This is shallow merging
+            console.log(this.state);
           }}>
             Change Name
           </button>
