@@ -3,38 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super(); // This calls the constructor method of Component
 
     this.state = {
-      name: 'Prathep',
-      company: 'Microsoft'
+      monster1: {name: 'Linda'},
+      monster2: {name: 'Frank'},
+      monster3: {name: 'Jacky'}
     }
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi this is {this.state.name}, I work at {this.state.company}
-          </p>
-          <button onClick={() => {
-            this.setState((state, props) => {
-              return {
-                name: "Thurairatnam"
-              }
-            }, () => {
-              console.log(this.state);
-            }); //this.setState is updating the state to a different object || This is shallow merging
-            
-          }}>
-            Change Name
-          </button>
-            
-          
-        </header>
+        <h1>{this.state.monster1.name}</h1>
+        <h1>{this.state.monster2.name}</h1>
+        <h1>{this.state.monster3.name}</h1>
       </div>
     );
   }
