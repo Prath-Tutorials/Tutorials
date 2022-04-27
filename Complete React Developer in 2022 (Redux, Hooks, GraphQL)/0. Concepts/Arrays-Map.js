@@ -13,7 +13,8 @@ const myArray = [1, 2, 3, 4, 5]
 
 /* Lets add one to each of the elemtns so the final array would be [2, 3, 4, 5, 6]
    One method of accomplishing this is to use a for-loop  
-   Another method is to use the map*/
+   Another method is to use the map method
+   NOTE: Map method does not upodate the orgianl array*/
 
 myArray.map(element => element +1);        // myArray is still equal to [1, 2, 3, 4, 5]
 myArray.map(value => value +1);            // myArray is still equal to [1, 2, 3, 4, 5]
