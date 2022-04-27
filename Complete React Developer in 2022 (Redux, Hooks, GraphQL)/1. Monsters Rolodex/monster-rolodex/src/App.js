@@ -6,23 +6,28 @@ class App extends Component {
   constructor() {
     super(); // This calls the constructor method of Component
 
+
     this.state = {
-      monster1: {name: 'Linda'},
-      monster2: {name: 'Frank'},
-      monster3: {name: 'Jacky'}
-    }
+      monster: [
+        { name: 'Linda' },
+        { name: 'Frank' },
+        { name: 'Jacky' }
+      ]
+    };
   }
 
-  render() {
-    return (
-      <div className="App">
-        <h1>{this.state.monster1.name}</h1>
-        <h1>{this.state.monster2.name}</h1>
-        <h1>{this.state.monster3.name}</h1>
-      </div>
-    );
+    render(){
+      return (
+        <div className="App">
+          {
+            this.state.monster.map((monster) => {
+              return <h1> {monster.name} </h1>
+            })
+          }
+        </div>
+      );
+    }
   }
-}
 
 
 export default App;
