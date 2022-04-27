@@ -21,8 +21,14 @@ class App extends Component {
             Hi this is {this.state.name}, I work at {this.state.company}
           </p>
           <button onClick={() => {
-            this.setState({name: 'Thurairatnam'}) //this.setState is updating the state to a different object || This is shallow merging
-            console.log(this.state);
+            this.setState((state, props) => {
+              return {
+                name: "Thurairatnam"
+              }
+            }, () => {
+              console.log(this.state);
+            }); //this.setState is updating the state to a different object || This is shallow merging
+            
           }}>
             Change Name
           </button>
