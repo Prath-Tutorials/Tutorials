@@ -1,14 +1,14 @@
 const quoteContainer = document.getElementById('quote-container')
 const quoteText = document.getElementById('quote')
 const quoteAuthor = document.getElementById('author')
-const quoteTwitter = document.getElementById('twitter')
+const twitterButton = document.getElementById('twitter')
 const newQuoteButton = document.getElementById('new-quote')
 
 let apiQuotes = [];
 
 
 // Get a single quote
-function newQupte(){
+function newQuote(){
     // Pick a random quotes form apiQuotes array
 
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
@@ -43,12 +43,23 @@ async function getquotes(){
     try{
         const responds = await fetch(apiURL);
         apiQuotes = await responds.json();
-        newQupte();
+        newQuote();
     } catch (error) {
         // Catch Error Here
     }
 }
 
+
+// Tweet Quote
+function tweetQuote(){
+    const twitterURL =  `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${quoteAuthor.textContent}`
+    window.open(twitterURL, '_blank');
+}
+
+
+// Event Listenter
+newQuoteButton.addEventListener('click', newQuote);
+twitterButton.addEventListener('click', tweetQuote);
 
 // On Load
 getquotes();
